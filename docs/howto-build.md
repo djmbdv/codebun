@@ -9,6 +9,7 @@
    - [MacOS](#dependencies-macos)
    - [Windows](#dependencies-windows)
 - [Build for Development](#build-dev)
+   - [Use a fork of vscode](#build-fork)
 - [Build for CI/Downstream](#build-ci)
 - [Build Snap](#build-snap)
 - [Patch Update Process](#patch-update-process)
@@ -141,6 +142,18 @@ The script `dev/build.sh` provides several flags:
 - `-o`: skip the build step
 - `-p`: generate the packages/assets/installers
 - `-s`: do not retrieve the source code of Visual Studio Code, it won't delete the existing build
+
+### <a id="build-fork"></a>Use a fork of vscode
+
+By default the pipeline clones `Microsoft/vscode` at the commit pinned in `upstream/<quality>.json`. To build against a fork instead, set `VSCODE_REPOSITORY`:
+
+```bash
+VSCODE_REPOSITORY="https://github.com/<user>/vscode" ./dev/build.sh
+```
+
+`dev/build.sh` already defaults to `https://github.com/djmbdv/vscode`; export `VSCODE_REPOSITORY` before running it to override that. In CI, add the same variable to the `env` block of the workflow, next to `VSCODE_QUALITY`.
+
+> The fork must expose the commit pinned in `upstream/<quality>.json`. A real GitHub fork does, because it shares the object graph with upstream and can serve arbitrary reachable SHAs (`git fetch --depth 1 origin <sha>`).
 
 ## <a id="build-ci"></a>Build for CI/Downstream
 

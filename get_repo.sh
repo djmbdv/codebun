@@ -67,7 +67,11 @@ mkdir -p vscode
 cd vscode || { echo "'vscode' dir not found"; exit 1; }
 
 git init -q
-git remote add origin https://github.com/Microsoft/vscode.git
+# Allow pointing the pipeline at a fork instead of upstream.
+# Default keeps the original behaviour (Microsoft/vscode).
+VSCODE_REPOSITORY="${VSCODE_REPOSITORY:-https://github.com/Microsoft/vscode.git}"
+echo "VSCODE_REPOSITORY=\"${VSCODE_REPOSITORY}\""
+git remote add origin "${VSCODE_REPOSITORY}"
 
 # figure out latest tag by calling MS update API
 if [[ -z "${MS_TAG}" ]]; then

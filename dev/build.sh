@@ -18,6 +18,9 @@ export SKIP_SOURCE="no"
 export VSCODE_LATEST="no"
 export VSCODE_QUALITY="stable"
 export VSCODE_SKIP_NODE_VERSION_CHECK="yes"
+# Use the local fork of vscode instead of upstream (Microsoft/vscode).
+# Override by exporting VSCODE_REPOSITORY before running this script.
+export VSCODE_REPOSITORY="${VSCODE_REPOSITORY:-https://github.com/djmbdv/vscode}"
 
 while getopts ":ilops" opt; do
   case "$opt" in
