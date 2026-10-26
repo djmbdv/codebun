@@ -1,0 +1,12 @@
+{
+  "name": "codebun",
+  "private": true,
+  "type": "module",
+  "description": "VS Code distribution: the checkout, the Bun patches, the REH/web builds and the codebun-backend extension. The shell that renders it lives in the vshell repo.",
+  "dependencies": {
+    "bun-pty": "^0.5.1"
+  },
+  "devDependencies": {
+    "node-gyp": "^13.1.0"
+  }
+}

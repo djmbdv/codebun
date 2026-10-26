@@ -1,0 +1,23 @@
+{
+  "menus": [
+    {
+      "label": "&File",
+      "items": [
+        { "label": "Open Folder...", "command": "file.openFolder" },
+        { "separator": true },
+        { "label": "Exit", "command": "app.quit" }
+      ]
+    },
+    {
+      "label": "&View",
+      "items": [
+        { "label": "Reload", "command": "view.reload" },
+        { "label": "Developer Tools", "command": "view.devtools" }
+      ]
+    },
+    {
+      "label": "&Help",
+      "items": [{ "label": "About", "command": "help.about" }]
+    }
+  ]
+}

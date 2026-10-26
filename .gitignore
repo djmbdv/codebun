@@ -19,3 +19,10 @@ stores/snapcraft/insider/*.snap
 stores/snapcraft/stable/*.snap
 font-size/node_modules/
 font-size/generate-css.js
+
+# --- codebun: VS Code build inputs and outputs -----------------------------
+# The cloned checkout and everything the stage scripts produce. `vscode*` above
+# already covers a checkout at the repo root; these are the nested ones.
+.work/
+node_modules/
+web/public/

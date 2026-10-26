@@ -2,6 +2,9 @@
 
 ## Table of Contents
 
+- [Running codebun](./howto-run.md) — the launcher, the two modes (static web build / REH), and how the shell is driven
+- [How to build](./howto-build.md) — the checkout, the Bun patches, the web and REH builds
+- [Performance trim](./perf-trim.md) — what was measured and what it bought
 - [Getting Started with VSCodium](https://github.com/VSCodium/vscodium/blob/master/docs/getting-started.md)
    - [Installation](https://github.com/VSCodium/vscodium/blob/master/docs/getting-started.md#installation)
    - [First Steps](https://github.com/VSCodium/vscodium/blob/master/docs/getting-started.md#first-steps)
